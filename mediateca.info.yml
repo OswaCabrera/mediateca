@@ -1,0 +1,8 @@
+name: Primer módulo
+description: 'Módulo de ejemplo'
+type: module
+core_version_requirement: ^8 || ^9
+package: 'MediatecaINAH'
+version: 1.0
+dependencies:
+  - drupal:node
