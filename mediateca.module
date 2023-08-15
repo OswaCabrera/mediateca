@@ -6,12 +6,11 @@
 /**
  * Implements hook_help().
  */
-function mediateca_help($route_name, \Drupal\Core\Routing\RouteMatchInterface $route_match)
-{
+function mediateca_help($route_name, \Drupal\Core\Routing\RouteMatchInterface $route_match){
     switch ($route_name){
         case 'help.page.mediateca':
             $output = '';
             $output .= '<p>Esta es la pagina de ayuda del modulo Escuela</p>';
-            return $output;
     }
+    return $output;
 }

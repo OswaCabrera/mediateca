@@ -1,0 +1,7 @@
+mediateca.media:
+  path: '/mediateca/media'
+  defaults:
+    _controller: '\Drupal\mediateca\Controller\MediaController::content'
+    _title: 'Media'
+  requirements:
+    _permission: 'access content'
