@@ -7,9 +7,9 @@ class MediatecaController extends ControllerBase{
     public function content(){
         $output = '';
         $output .= '<p>Esta es la pagina de ayuda del modulo Escuela</p>';
-        return array(
+        return [
             '#type' => 'markup',
             '#markup' => $output,
-        );
+        ];
     }
 }
