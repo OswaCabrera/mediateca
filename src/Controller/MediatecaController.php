@@ -1,10 +1,10 @@
 <?php
 
 namespace Drupal\mediateca\Controller;
+use Drupal\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Database\Connection;
 use Drupal\Core\Messenger\MessengerInterface;
-use Symfony\Component\DependencyInjection\ContainerInterface;
 
 class MediatecaController extends ControllerBase{
 
@@ -29,14 +29,18 @@ class MediatecaController extends ControllerBase{
 
     public function content(){
 
+        $node_manager = $this->entityTypeManager()->getStorage('node');
+
+        $node = $node_manager->load(1);
+
+
+        dpm($node);
+
         $result = $this->connection->select('node_field_data', 'n')
-            ->fields('n', ['nid', 'title'])
+            ->fields('n', ['nid', 'title', 'type'])
             ->execute()
             ->fetchAll();
 
-        dpm($result);
-
-        $this->messenger->addMessage('Hola Mundo');
 
         $output = [];
         $output['primero'] = [
